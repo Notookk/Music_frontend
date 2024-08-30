@@ -1,14 +1,11 @@
 from pyrogram import Client, filters
-from utils.youtube import YouTubeAPI
+from pyrogram.types import Message
+from flask_socketio import emit
 
-yt = YouTubeAPI()
-
-@Client.on_message(filters.command('play') & filters.private)
-async def play(client, message):
-    query = ' '.join(message.command[1:])
-    video = await yt.search_video(query)
-    if video:
-        url = yt.base_url + video['id']
-        file_path = await yt.download_audio(url)
-        await message.reply_text(f"Playing: {video['title']}", quote=True)
-        # Code to stream the audio to the web goes here
+# Play command to start music playback
+@Client.on_message(filters.command("play") & filters.group)
+async def play(client: Client, message: Message):
+    chat_id = message.chat.id
+    song_name = message.text.split(' ', 1)[1] if len(message.text.split()) > 1 else 'default song'
+    emit('play', {'chat_id': chat_id, 'song': song_name}, namespace='/music')
+    await message.reply_text(f"Playing the song: {song_name}!")
