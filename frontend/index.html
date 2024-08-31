@@ -1,0 +1,98 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from mainmusic.4.213.40.172.sslip.io/static/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Aug 2024 07:45:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechZMusic</title>
+
+    <!-- Audio Player -->
+    <link rel="stylesheet" href="../../cdn.plyr.io/3.7.8/plyr.css" />
+    <script src="../../cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+        rel="stylesheet" />
+
+    <!-- External Scripts -->
+    <script src="../../cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="../../telegram.org/js/telegram-web-app.js"></script>
+
+    <!-- Project Code -->
+    <link rel="stylesheet" href="style1b3b.css?v=63" />
+    <script src="extra1b3b.js?v=63"></script>
+    <script src="socket_io1b3b.js?v=63"></script>
+    <script src="script1b3b.js?v=63"></script>
+    <script src="telegram1b3b.js?v=63"></script>
+</head>
+
+<body>
+    <div id="join-div" class="join-div" style="display: flex">
+        <button id="join-btn" class="glow-button">Join Group Music</button>
+    </div>
+
+    <div id="loader" class="loader" style="display: none">
+        <img src="load.gif" alt="Loading..." height="100px" width="100px" />
+    </div>
+
+    <div id="no-song" class="container" style="display: none">
+        <h3>No Song Is Playing Currently, Use /play CMD</h3>
+    </div>
+
+    <div id="main-container" class="main-container" style="display: none">
+        <div id="player-div">
+            <div id="bg-container" class="bg-container">
+                <img id="bg-image" src="#" />
+            </div>
+
+            <div class="overlay-container">
+
+                <div id="overlay-img" class="overlay-img"></div>
+
+                <div id="song-details" class="song-details">
+                    <p id="song-title" class="title"></p>
+
+                    <audio id="player">
+                        Your browser does not support the audio element.
+                    </audio>
+
+                    <div class="time-div">
+                        <p id="current-time"></p>
+                        <p id="total-time"></p>
+                    </div>
+                </div>
+
+                <!-- Tabs for switching between Queue and Connected Users -->
+                <div class="tab-div">
+                    <div id="users-tab" class="tab-button active-tab">Users</div>
+                    <div id="queue-tab" class="tab-button">Queue</div>
+                </div>
+
+
+                <div id="queue-div" class="queue-div" style="display: none;">
+                    <div id="song-list" class="song-list">
+
+
+                    </div>
+                </div>
+
+                <div id="users-div" class="users-div queue-div">
+                    <div id="user-list" class="user-list song-list">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<!-- Mirrored from mainmusic.4.213.40.172.sslip.io/static/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Aug 2024 07:45:15 GMT -->
+</html>
